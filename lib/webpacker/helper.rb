@@ -51,4 +51,18 @@ module Webpacker::Helper
     def pack_name_with_extension(name, type:)
       "#{name}#{compute_asset_extname(name, type: type)}"
     end
+
+    def compute_asset_extname(source, options = {})
+      extensions = {
+        javascript: ".js",
+        stylesheet: ".css"
+      }
+      return if options[:extname] == false
+      extname = options[:extname] || extensions[options[:type]]
+      if extname && File.extname(source) != extname
+        extname
+      else
+        nil
+      end
+    end
 end
