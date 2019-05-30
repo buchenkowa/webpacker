@@ -1,4 +1,3 @@
 plugins:
   postcss-smart-import: {}
   postcss-cssnext: {}
-  autoprefixer: { browser: ['last 3 version'] }
