@@ -2,6 +2,8 @@ const webpack = require('webpack')
 const CompressionPlugin = require('compression-webpack-plugin')
 const Environment = require('../environment')
 
+Environment.plugins.get('OptimizeCSSAssets').options.cssProcessorOptions.zindex = false;
+
 module.exports = class extends Environment {
   constructor() {
     super()
